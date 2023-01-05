@@ -25,6 +25,6 @@ gap.sort()
 # 분리하는 지점의(gap이 가장 큰) gap을 제외하고 모두 합산
 cost = 0
 for i in range(N - K):
-    cost += H[i]
+    cost += gap[i]
 
 print(cost)
