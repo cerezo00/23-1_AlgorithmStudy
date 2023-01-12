@@ -10,7 +10,7 @@ DY = [0, 0, 1, -1]
 
 # 모든 좌표에 대해 3개의 벽을 세우는 DFS 함수
 # 3개의 벽 위치 -> 가능한 바이러스의 최댓값
-def build_wall_bfs(num_wall):
+def build_wall_dfs(num_wall):
 
     # 벽을 모두 세웠다면 바이러스 전파
     if num_wall == 3:
@@ -22,7 +22,7 @@ def build_wall_bfs(num_wall):
         for j in range(width):
             if graph[i][j] == 0:
                 graph[i][j] = 1
-                build_wall_bfs(num_wall + 1)
+                build_wall_dfs(num_wall + 1)
                 graph[i][j] = 0
 
 
@@ -81,7 +81,7 @@ for _ in range(height):
 min_virus = height * width
 
 # 알고리즘 시작
-build_wall_bfs(0)
+build_wall_dfs(0)
 
 # num_safe := 안전지대의 넓이 = 최초 안전지대의 넓이 - 바이러스 전파지대의 넓이 - 벽의 개수
 num_safe = sum(graph[i].count(0) for i in range(height)) - min_virus - 3
