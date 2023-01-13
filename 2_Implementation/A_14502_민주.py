@@ -11,17 +11,17 @@ result = 0         # 안전 영역 크기 최댓값
 for i in range(N):
     array.append(list(map(int, input().split())))   # 초기 지도 모양 배열에 입력
 
-def virus(array, x, y):    # 각 바이러스 사방으로 전파 (dfs)
+def virus(array, x, y):    # 각 바이러스 사방으로 전파
     #global N, M
-    dz = ((1, 0), (-1, 0), (0, 1), (0, -1))   # 이동 방향
+    dz = ((1, 0), (-1, 0), (0, 1), (0, -1))   # 이동 방향 (동 -서 - 북 -남)
 
-    for d in dz:
+    for d in dz:        # 각 바이러스의 상하좌우
         dx = x + d[0]
         dy = y + d[1]
 
-        if dx < 0 or dx >= N or dy < 0 or dy >= M:   # 상하좌우로 퍼질 수 있는 경우 넘기기
+        if dx < 0 or dx >= N or dy < 0 or dy >= M:
             continue
-        if array[dx][dy] == 1:   # 1이면 넘기기
+        if array[dx][dy] == 1:   # 1이면 넘기기 (벽)
             continue
 
         if array[dx][dy] != 2:   # 2가 아니면 (즉 0)
@@ -40,7 +40,7 @@ def dfs(wall, array):   # 벽 설치, 안전영역 크기 계산
                     virus(tmp_array, i, j)   # 각 바이러스의 위치에서 전파 진행
         safe_area = 0
 
-        for i in range(N):
+        for i in range(N):                  # 모든 좌표에서 하나씩벽을 설치하며 안전영역 찾기
             for j in range(M):
                 if tmp_array[i][j] == 0:    # 현재 배열 값 = 0 -> 안전영역 크기 계산
                     safe_area += 1
