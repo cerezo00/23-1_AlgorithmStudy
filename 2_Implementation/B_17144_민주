@@ -1,6 +1,7 @@
 # 17144 미세먼지 안녕!
 # 메모리 30684KB , 시간 4012 ms
 # (r, c)에 남은 미세먼지 양 = A[x][y] - (A[x][y]/5)*(확산된 방향 개수)
+
 import sys
 input = sys.stdin.readline
 
