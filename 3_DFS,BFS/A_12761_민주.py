@@ -1,5 +1,6 @@
 # 12761 돌다리
-# 메모리 42212 KB, 시간 204ms
+# 메모리 42212 KB, 시간 200ms
+
 from collections import deque
 
 A, B, N, M = map(int, input().split())
@@ -15,18 +16,18 @@ def bfs():    # bfs
         now = queue.popleft()
         for i in {1, -1, A, -A, B, -B}:    # +- 1, +- A, +- B 이동 시
             tmp = now + i                  # 현재 위치에서 현재 인덱스만큼 이동한 값 저장
-            if 0 <= tmp <= 100000 and tmp not in cnt:  # 범위에서 벗어나지 않고 아직 이동하지 않은 위치라면
+            if 0 <= tmp <= 100000 and tmp not in cnt:  # 범위에서 벗어나지 않고 아직 방문하지 않은 위치라면
                 cnt[tmp] = cnt[now] + 1    # 이동 횟수에 추가
-                queue.append(tmp)          # 큐에 넣기
+                queue.append(tmp)
 
         for i in {A, B}:  # A배나 B배의 위치로 이동
-            tmp = now * i    # 배로 이동하므로 현재 위치에 i만큼 곱함
-            if 0 <= tmp <= 100000 and tmp not in cnt:  # 범위에서 벗어나지 않고 아직 이동하지 않은 위치라면
+            tmp = now * i    # 배로 이동하므로 현재 위치에 현재 인덱스만큼 곱함
+            if 0 <= tmp <= 100000 and tmp not in cnt:  # 범위에서 벗어나지 않고 아직 방문하지 않은 위치라면
                 cnt[tmp] = cnt[now] + 1    # 이동 횟수에 추가
-                queue.append(tmp)          # 큐에 넣기
+                queue.append(tmp)
 
-        if M in cnt:  # m에 도착이 가능하면 
-            print(cnt[M])  # M으로 가는 최소 이동 횟수 출력 
+        if M in cnt:  # M에 도착하면
+            print(cnt[M])  # M으로 가는 최소 이동 횟수 출력
             break  # 종료
- 
-bfs()   # 함수 호출 
+
+bfs()   # 함수 호출
