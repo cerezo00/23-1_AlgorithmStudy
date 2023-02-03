@@ -2,8 +2,8 @@
 # 배열을 반시계방향으로 r번 회전 시키기
 
 n, m, r = map(int, input().split())
-arr = []
-for _ in range(m):
+arr = [] # 배열 받을 리스트
+for _ in range(m): # 이차원 배열로 받기
     arr.append(list(map(int, input().split())))
 
 # 바꿀 좌표를 계산하고 그 좌표의 값을 저장해놓고 이전 좌표의 값을 계산된 좌표의 값에 넣는 식으로 계산하였다.
