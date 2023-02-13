@@ -1,5 +1,5 @@
 # 3273. 두 수의 합
-# 80~84ms
+# 72ms
 
 def sol():
     size = int(input())  # 1 <= n <= 10^6
