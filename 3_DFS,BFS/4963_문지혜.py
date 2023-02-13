@@ -24,8 +24,8 @@ def bfs(x, y):
 
             # 섬이면서 위치도 안벗어났으면
             if 0 <= nx < h and 0 <= ny < w and graph[nx][ny] == 1:
-                graph[nx][ny] = 0 # 이거 왜해 ??
-                queue.append([nx,ny]) # 이것도 왜해 ??
+                graph[nx][ny] = 0 # 방문처리
+                queue.append([nx,ny]) # 큐에 추가
 
 
 while True:
@@ -40,7 +40,7 @@ while True:
     for i in range(h):
         for j in range(w):
             if graph[i][j] == 1:  # 섬이면
-                bfs(i,j)
+                bfs(i, j)
                 count += 1
 
 
