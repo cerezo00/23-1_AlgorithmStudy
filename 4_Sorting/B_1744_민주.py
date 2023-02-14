@@ -37,5 +37,4 @@ else:
     for i in range(0, len(minus) - 1, 2):
         result += minus[i] * minus[i + 1]
     result += minus[len(minus)-1]
-
 print(result) # 결과 출력
