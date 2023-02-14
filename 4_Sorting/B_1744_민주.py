@@ -19,8 +19,8 @@ for _ in range(N):
     else:                # 음수면 minus 배열에 저장
         minus.append(num)
 
-plus.sort(reverse=True)  # 양수는 오름차순 정렬
-minus.sort()             # 음수는 내림차순 정렬
+plus.sort(reverse=True)  # 양수는 내림차순 정렬
+minus.sort()             # 음수는 오름차순 정렬
 
 if len(plus) % 2 == 0:   # 짝수면 2개씩 곱하면 된다
     for i in range(0, len(plus), 2):
