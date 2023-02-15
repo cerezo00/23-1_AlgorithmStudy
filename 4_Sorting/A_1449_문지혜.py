@@ -21,7 +21,7 @@ count = 1
 # 물이 새는 곳의 위치를 차례대로 받으면서
 for location in data[1:]:
     # 테이프를 붙이는 범위 내에 물이 새는 곳이 있으면
-    if location in range(start, start+1):
+    if location in range(start, start+l):
         # 기존 테이프 사용
         continue
     else:
