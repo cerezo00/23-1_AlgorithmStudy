@@ -1,5 +1,5 @@
 # 7795. 먹을 것인가 먹힐 것인가
-# 264ms (함수미사용 : 544ms)
+# 252ms (함수미사용 : 480ms)
 
 # 이걸 대체 왜 이분탐색으로..;; -> 푸는지 몰랐었는데 공부에 도움이 되네요!
 
@@ -21,7 +21,7 @@
 
 def BS():
     num_a, num_b = map(int, input().split())
-    a_lst = sorted(list(map(int, input().split())))
+    a_lst = list(map(int, input().split()))
     b_lst = sorted(list(map(int, input().split())))
 
     count = 0
