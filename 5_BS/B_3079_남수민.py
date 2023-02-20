@@ -8,7 +8,6 @@ pass_time_list = [int(input()) for _ in range(num_way)]
 
 l = min(pass_time_list) * num_people
 r = max(pass_time_list) * num_people
-min_time = r
 
 while l <= r:
     m = (l + r) // 2
@@ -19,8 +18,7 @@ while l <= r:
 
     if tot_people >= m:
         r = m - 1
-        min_time = min(min_time, m)
     else:
         l = m + 1
 
-print(min_time)
+print(l)
