@@ -22,5 +22,4 @@ while start <= end:
         result = mid
     else:                # 사람 수보다 작으면 불가능하므로
         start = mid + 1  # 더 오른쪽에서 탐색
-
 print(result) # 최솟값 출력 
